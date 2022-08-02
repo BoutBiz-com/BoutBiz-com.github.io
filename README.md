@@ -1,2 +1,2 @@
-# boutbiz.github.io
+# boutbiz-com.github.io
 The official website!
