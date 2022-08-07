@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta id="viewport" name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<title>BoutBiz</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32">
+		<!--<link rel="icon" type="image/png" href="-96x96.png" sizes="96x96">-->
+		<link rel="icon" type="image/png" href="assets/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="assets/android-chrome-512x512.png" sizes="512x512">
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/apple-touch-icon.png">
+		<meta property="og:image" content="assets/android-chrome-512x512.png">
+		<meta name="Keywords" content="bout, biz, business, ERP, CMS, CRM, ESB">
+		<meta name="Description" content="BoutBiz offers consultation services for your business ERP, CMS, CRM, and ESB needs.">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+		<style>
+		@font-face {
+		    font-family: 'texgyreadventorregular';
+		    src: url('./assets/fonts/texgyreadventor-regular-webfont.eot');
+		    src: url('./assets/fonts/texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('./assets/fonts/texgyreadventor-regular-webfont.woff') format('woff'),
+			 url('./assets/fonts/texgyreadventor-regular-webfont.ttf') format('truetype'),
+			 url('./assets/fonts/texgyreadventor-regular-webfont.svg#texgyreadventorregular') format('svg');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+
+		@font-face {
+		    font-family: 'open_sanslight';
+		    src: url('./assets/fonts/OpenSans-Light-webfont.eot');
+		    src: url('./assets/fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('./assets/fonts/OpenSans-Light-webfont.woff') format('woff'),
+			 url('./assets/fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+			 url('./assets/fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+
+		@viewport {
+			width:extend-to-zoom;
+			zoom:1.0;
+		}
+
+		html, body {
+			padding:0;
+			margin:0;
+			width:100vw;
+			height:100vh;
+			overflow:hidden;
+		}
+
+		.background-image {
+			width: 40vw;
+			height: 100vh;
+			position: fixed;
+			left: 5vw;
+			background: url(./assets/boutbiz-logo.svg);
+			background-size: contain;
+			background-position: left bottom;
+			background-repeat: no-repeat;
+		}
+
+		body {
+			font-family:'open_sanslight', arial, sans-serif;
+			font-synthesis: none;
+			text-rendering: optimizeLegibility;
+			-moz-osx-font-smoothing: grayscale;
+			-moz-font-feature-settings: 'liga', 'kern';
+			direction: ltr;
+			text-align: left;
+			-webkit-font-smoothing: antialiased !important;
+		}
+
+		strong {
+			font-weight: bold;
+		}
+
+		ul {
+			list-style-type: "-  ";
+			padding-left: 12px;
+		}
+
+		form ul {
+			list-style-type: none;
+		}
+
+		form li {
+			margin-bottom: 1em;
+		}
+
+		textarea {
+			width: 20em;
+			height: 10em;
+		}
+
+		input, textarea {
+			font-family: 'open_sanslight', arial, sans-serif;
+			border: 1px solid grey;
+			padding: 3px;
+			font-size: 0.9em;
+		}
+
+		footer {
+			display: block;
+			position: relative;
+			padding: 1em;
+			text-align: center;
+			color: #ffffff;
+			background-color: #333333;
+			scroll-snap-align: start;
+			margin: 55vh -5vw 0 0;
+		}
+
+		.scroll-container {
+			position: relative;
+			overflow-x: hidden;
+			overflow-y: auto;
+			width: 100vw;
+			height: 100vh;
+			scroll-snap-type: y mandatory;
+			scroll-snap-stop:always;
+		}
+
+		.scroll-container .page {
+			height: 100vh;
+			width: 45vw;
+			margin:0 0 0 55vw;
+			display: block;
+			scroll-snap-align: start;
+		}
+
+		h1 {font:300 7vmin/7vmin 'open_sanslight', arial, sans-serif; color:#333; margin:0; padding:10vh 5vw 2vh 0;}
+		h2 {font:300 5vmin/5vmin 'open_sanslight', arial, sans-serif; color:#333; margin:0; padding:1vh 5vw 2vh 0;}
+		p {font:300 3vmin/3.5vmin 'open_sanslight', arial, sans-serif; color:#08c; margin:0; padding:1vh 5vw 0 0;}
+
+		@media only screen and (max-width:480px) {
+			.background-image {
+				opacity: 0.4;
+				bottom: 2em;
+			}
+
+			.scroll-container .page {
+				width: 90vw;
+				margin:0 5vw 0 5vw;
+			}
+
+			h1 {
+				font:300 7vmin/7vmin 'open_sanslight', arial, sans-serif;
+				color:#333;
+				margin:0;
+				padding:10vh 0 2vh 0;
+			}
+
+			h2 {
+				font:300 5vmin/5vmin 'open_sanslight', arial, sans-serif;
+				color:#333;
+				margin:0;
+				padding:1vh 0 2vh 0;
+			}
+
+			p {
+				font:300 3vmin/3.5vmin 'open_sanslight', arial, sans-serif;
+				color:#08c;
+				margin:0;
+				padding:1vh 0 0 0;
+			}
+		}
+		</style>
+	</head>
+	<body>
+	<div class="background-image"></div>
+	<div class="scroll-container">
+		<div class="page">
+			<h1>BoutBiz</h1>
+			<h2>Business software needs!</h2>
+			<p>BoutBiz offers consultation services for your business ERP, CMS, CRM, and ESB needs.</p>
+		</div>
+		<div class="page">
+			<h1>ERP</h1>
+			<h2>Business software needs!</h2>
+			<p>Collect, store, manage, and interpret data from many business activities.</p>
+			<p>It includes everything from CRM, corporate performance and governance, HR (human resources), accounting, warehousing management, MRP (Material Requirements Planning), e-commerce, business intelligence, enterprise asset management, and more.</p>
+		</div>
+		<div class="page">
+			<h1>CMS (Content Management System)</h1>
+			<h2>Cured content management.</h2>
+			<p>We offer businesses custom CMS setups.</p>
+		</div>
+		<div class="page">
+			<h1>CRM (Customer Relationship Management)</h1>
+			<h2>For a more customer-centric business culture.</h2>	
+			<p>CRM offers better customer interactions using data analysis tools.
+The CRM uses the same environment as the ERP, meaning everything is a part of the rest of your business setup.</p>
+		</div>
+		<div class="page">
+			<h1>ESB (Enterprise Service Bus)</h1>
+			<h2>Superior integration</h2>
+			<p>Whatever other systems the business has, we can help you integrate them with the rest of your business information technology requirements.</p>
+		</div>
+		<div class="page">
+			<h1>Assist</h1>
+			<h2>Here to serve</h2>
+			<p>Any issue with of the tools or services? We are there to help.</p>
+		</div>
+		<div class="page">
+			<h1>Open Source</h1>
+			<h2><q><strong>In real open source, you have the right to control your own destiny.</strong></q> ~ Linus Torvals</h2>
+			<p>We believe in the power of the open source community.</p>
+		</div>
+		<div class="page">
+			<h1>Contact Us</h1>
+			<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/1kiEKGA7Re8NRqZ6q3Zzm1OjzHFNYy1_DVTQR0NFmoU0/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+			  <ul>
+				<li>
+				  <label for="entry.1100094701">First name:</label><br>
+				  <input type="text" name="entry.1100094701" id="entry.1100094701">
+				</li>
+				<li>
+				  <label for="entry.638803713">Last name:</label><br>
+				  <input type="text" name="entry.638803713" id="entry.638803713">
+				</li>
+				<li>
+				  <label for="entry.2099974316">Email Address:</label><br>
+				  <input type="email" name="entry.2099974316" id="entry.2099974316">
+				</li>
+				<li>
+				  <label for="entry.82108433">Phone number:</label><br>
+				  <input type="tel" name="entry.82108433" id="entry.82108433">
+				</li>
+				<li>
+				  <label for="entry.860993709">Message:</label><br>
+				  <textarea name="entry.860993709" id="entry.860993709"></textarea>
+				</li>
+				<li>
+				  <input type="submit" value="Submit">
+				</li>
+			  </ul>
+			</form>
+			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+		</div>
+		<footer>Copyright © BoutBiz - boutbiz.com</footer>
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script>var submitted=false;</script>
+	<script>
+	$('#gform').on('submit', function(e) {
+	  $('#gform *').fadeOut(2000);
+	  $('#gform').prepend('Your message has been sent...');
+	  });
+	</script>
+</body>
+</html>
